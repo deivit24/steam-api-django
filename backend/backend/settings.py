@@ -47,8 +47,9 @@ INSTALLED_APPS = [
     'game'
 ]
 
-CORS_ALLOWED_ORIGINS =[
-    "https://localhost:8080"
+CORS_ALLOWED_ORIGINS = [
+    "https://localhost:8080",
+    "http://localhost:8080"
 ]
 
 MIDDLEWARE = [

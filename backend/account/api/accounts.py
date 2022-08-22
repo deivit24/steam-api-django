@@ -13,10 +13,11 @@ steam = Steam(KEY)
 
 @api_view(['GET'])
 def search_steam_players(request, search):
-    accounts = Account.objects.all()
-    players = steam.users.search_user(search)
-    return JsonResponse(players)
-
+    try:
+        players = steam.users.search_user(search)
+        return JsonResponse(players)
+    except:
+        return JsonResponse({"player": {}})
 
 @api_view(['GET'])
 def get_steam_player(request, steamid):
